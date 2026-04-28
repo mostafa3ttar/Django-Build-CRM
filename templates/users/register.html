@@ -8,13 +8,14 @@
 
     <hr>
 
-    <form method="post" , autocomplete="off"></form>
+    <form method="POST" , autocomplete="off">
     {% csrf_token %}
 
     <!-- {{ form.as_p }} -->
     {{ form|crispy }}
 
-    <button type="submit" class="btn btn-outline-primary">Register</button>
+    <button type="submit" class="btn btn-outline-primary">SignUp</button>
+    </form>
 
 </div>
 

@@ -1,21 +1,13 @@
 from django.shortcuts import render, redirect
-from .form import CreateUserForm
+
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'web/index.html')
+def home(request):
+    context = {'home':home}
+    return render(request, 'web/home.html', context)
 
-def register(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            # return redirect('login')
-    else:
-        form = CreateUserForm()
-    
-    context = {'form':form}      
-    
-    return render(request, 'web/register.html', context)
+
+def dashboard(request):
+    context = {'dashboard':dashboard}
+    return render(request, 'web/dashboard.html', context)

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1 class="my-3 text-center">Welcome {{ user.username }}, to our system</h1>
+{% else %}
+<h1>Welcome guest!</h1>
+{% endif %}
+
+<a href="{% url 'users:logout' %}" class="btn btn-outline-danger" style="margin-left: 45%;">Logout</a>
+
+{% endblock content %}
