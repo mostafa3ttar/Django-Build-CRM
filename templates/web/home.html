@@ -12,12 +12,12 @@
     <a href="{% url 'webapp:dashboard' %}" class="btn btn-outline-success" style="margin-right: 10px;">Dashboard</a>
     <a href="{% url 'users:logout' %}" class="btn btn-outline-danger"
         style="padding-right: 3%; padding-left: 3%; margin-left: 10px;">SignOut</a>
-        {% else %}
+    {% else %}
     <a href="{% url 'users:register' %}" class="btn btn-outline-success" style="margin-right: 10px;">Creat Your
         Account</a>
     <a href="{% url 'users:login' %}" class="btn btn-outline-primary"
         style="padding-right: 6%; padding-left: 6%; margin-left: 10px;">Login</a>
-        {% endif %}
+    {% endif %}
 
 </div>
 
