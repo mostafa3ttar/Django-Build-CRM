@@ -2,4 +2,23 @@
 
 {% block content %}
 
+<div class=" container text-center" style="margin-top: 20px;">
+    <h1 class="my-3">Django - CRM - Managment at it's finest!</h1>
+    <h5 class="mt-2"> <b>Keep track of your records effectivley!</b></h5>
+</div>
+<hr style="border: 1px solid black; margin: 30px 180px;">
+<div class="container text-center gap-2" style="margin-top: 5%;">
+    {% if user.is_authenticated %}
+    <a href="{% url 'webapp:dashboard' %}" class="btn btn-outline-success" style="margin-right: 10px;">Dashboard</a>
+    <a href="{% url 'users:logout' %}" class="btn btn-outline-danger"
+        style="padding-right: 3%; padding-left: 3%; margin-left: 10px;">SignOut</a>
+        {% else %}
+    <a href="{% url 'users:register' %}" class="btn btn-outline-success" style="margin-right: 10px;">Creat Your
+        Account</a>
+    <a href="{% url 'users:login' %}" class="btn btn-outline-primary"
+        style="padding-right: 6%; padding-left: 6%; margin-left: 10px;">Login</a>
+        {% endif %}
+
+</div>
+
 {% endblock content %}
