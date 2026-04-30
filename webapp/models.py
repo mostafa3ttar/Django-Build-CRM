@@ -15,8 +15,8 @@ class Category (models.Model):
 class Record(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     phone = models.IntegerField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tall = models.IntegerField()
     weight = models.IntegerField()
     address = models.CharField(max_length=500)
@@ -24,3 +24,6 @@ class Record(models.Model):
     
     def __str__(self):
         return self.first_name +" "+ self.last_name
+    
+    class Meta:
+        ordering = ['-id']
