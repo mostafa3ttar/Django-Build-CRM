@@ -28,6 +28,8 @@ class Record(models.Model):
     slug = models.SlugField(null=True, blank=True, unique=True)
     
     def save(self, *args, **kwargs):
+        self.first_name = self.first_name.title()
+        self.last_name = self.last_name.title()
         if not self.slug:
             original_slug = slugify(self.first_name +" "+ self.last_name)    ##logic
             self.slug = f"{original_slug}-{str(uuid.uuid4())[:4]}"

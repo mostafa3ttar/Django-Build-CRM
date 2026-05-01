@@ -27,9 +27,10 @@
             </tr>
         </thead>
         <tbody>
+            {% if records %}
             {% for record in records %}
             <tr>
-                <th class="bg-light" scope="row">{{record.id}}</th>
+                <th class="bg-light" scope="row">{{ forloop.revcounter }}</th>
                 <td>{{ record.first_name }} {{ record.last_name }}</td>
                 <td>+20{{record.phone}}</td>
                 <td>{{record.category}}</td>
@@ -41,8 +42,17 @@
                         class="btn btn-outline-primary btn-sm">Veiw</a>
                 </td>
             </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+                <td class="text-center mt-3" colspan="110">
+                    <div class="alert alert-warning" style="margin: 0 90px;" role="alert">
+                        <h4><b> You don't have any record yet!</b></h4>
+                    </div>
+                </td>
+            </tr>
+            {% endif %}
         </tbody>
-        {% endfor %}
     </table>
 </div>
 

@@ -17,8 +17,10 @@
 </div>
 
 <div class="container">
-    <a class="btn btn-outline-success" href="{% url 'webapp:edit-record' record.slug %}">Edit Record</a>
-    <a class="btn btn-outline-danger" href="{% url 'webapp:delete-record' record.slug %}">Delete</a>
+    <a class="btn btn-outline-success" style="margin-right: 5px;" href="{% url 'webapp:edit-record' record.slug %}">Edit
+        Record</a>
+    <a class="btn btn-outline-danger" style="margin-left: 5px;"
+        href="{% url 'webapp:delete-record' record.slug %}">Delete</a>
 </div>
 
 {% endblock content %}
