@@ -1,4 +1,7 @@
 from django.db import models
+import uuid
+from django.utils.text import slugify
+
 
 # Create your models here.
 
@@ -21,6 +24,14 @@ class Record(models.Model):
     weight = models.IntegerField()
     address = models.CharField(max_length=500)
     created_at = models.DateField(auto_now_add=True)
+    
+    slug = models.SlugField(null=True, blank=True, unique=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            original_slug = slugify(self.first_name +" "+ self.last_name)    ##logic
+            self.slug = f"{original_slug}-{str(uuid.uuid4())[:4]}"
+        super(Record,self).save(*args, **kwargs)
     
     def __str__(self):
         return self.first_name +" "+ self.last_name

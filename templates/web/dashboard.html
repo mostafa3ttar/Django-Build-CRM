@@ -2,16 +2,11 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<h1>Welcome to the Dashboard page, <b>{{user.username}}! 👋</b></h1>
-<hr style="border: 1px solid black; margin: 30px 180px;">
+<h1 class="p-3">Welcome to the Dashboard page, <b>{{user.username}}! 👋</b></h1>
+<hr style="border: 1px solid black; margin: 20px 180px;">
 {% else %}
 <h1>Welcome guest!</h1>
 {% endif %}
-
-<!-- <h1 class="my-3 text-center">Hello, {{ user.username }}!</h1> -->
-
-<!-- <a href="{% url 'users:logout' %}" class="btn btn-outline-danger"
-    style="margin-left: 47%; margin-right: 47%;">Logout</a> -->
 
 <a class="btn btn-outline-primary" style="margin-left: 45%; margin-right: auto;"
     href="{% url 'webapp:create-record' %}">Create Record</a>
@@ -28,10 +23,11 @@
                 <th scope="col">Weight</th>
                 <th scope="col">Address</th>
                 <th scope="col">Date</th>
+                <th scope="col">Details</th>
             </tr>
         </thead>
         <tbody>
-            {% for record in record %}
+            {% for record in records %}
             <tr>
                 <th class="bg-light" scope="row">{{record.id}}</th>
                 <td>{{ record.first_name }} {{ record.last_name }}</td>
@@ -41,6 +37,9 @@
                 <td>{{record.weight}}</td>
                 <td>{{record.address}}</td>
                 <td>{{record.created_at}}</td>
+                <td><a href="{% url 'webapp:detail-record' record.slug %}"
+                        class="btn btn-outline-primary btn-sm">Veiw</a>
+                </td>
             </tr>
         </tbody>
         {% endfor %}

@@ -7,4 +7,4 @@ class CreateRecordForm(forms.ModelForm):
         model = Record
         # fields = ['first_name', 'last_name', 'phone', 'category',]
         fields = '__all__'
-        exclude = ('created_at',)
+        exclude = ('created_at','slug',)

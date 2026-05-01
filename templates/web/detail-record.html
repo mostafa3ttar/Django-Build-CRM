@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="cart" style="padding-left: 100px; padding-top: 100px;">
+    <h3>
+        <p><strong>ID: </strong>{{record.id}}</p>
+        <p><strong>Full Name: </strong>{{record.first_name }} {{record.last_name}}</p>
+        <p><strong>Phone: </strong>+20{{record.phone}}</p>
+        <p><strong>Category: </strong>{{record.category}}</p>
+        <p><strong>Tall: </strong>{{record.tall}}</p>
+        <p><strong>Weight: </strong>{{record.weight}}</p>
+        <p><strong>Address: </strong>{{record.address}}</p>
+        <p><strong>Created_at: </strong>{{record.created_at}}</p>
+    </h3>
+</div>
+
+<div class="container">
+    <a class="btn btn-outline-success" href="{% url 'webapp:edit-record' record.slug %}">Edit Record</a>
+    <a class="btn btn-outline-danger" href="{% url 'webapp:delete-record' record.slug %}">Delete</a>
+</div>
+
+{% endblock content %}

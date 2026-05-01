@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container text-center" style="margin: 100px;">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>
+                <p>Are you sure you want to delete "{{ record.first_name }} {{record.last_name}}"?</p>
+            </h1>
+            <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'webapp:detail-record' record.slug %}">Cancel</a>
+        </form>
+    </div>
+</body>
+
+</html>
