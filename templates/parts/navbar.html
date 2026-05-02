@@ -16,15 +16,15 @@
             </li>
             &nbsp; &nbsp; &nbsp;
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:logout' %}">LogOut &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'users:logout' %}">LogOut &nbsp; <i class="bi bi-door-open-fill" aria-hidden="true"></i> </a>
             </li>
             {% else %}
                         <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:register' %}">SignUp &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'users:register' %}">SignUp &nbsp; <i class="bi bi-hand-index-fill" aria-hidden="true"></i> </a>
             </li>
             &nbsp; &nbsp; &nbsp;
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:login' %}">LogIn &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'users:login' %}">LogIn &nbsp; <i class="bi bi-door-closed-fill" aria-hidden="true"></i> </a>
             </li>
             {% endif %}
             &nbsp; &nbsp; &nbsp;

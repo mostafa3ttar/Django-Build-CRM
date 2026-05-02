@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .form import *
 from django.contrib import messages
 from .models import Record
+from django.db.models import Q
+import logging
 
 
 # Create your views here.
@@ -16,8 +18,13 @@ def home(request):
 #Dashboard
 @login_required(login_url='users:login')
 def dashboard(request):
-    records = Record.objects.all()
-    context = {'records':records}
+    sort_param = request.GET.get('sort', '-id')
+    records = Record.objects.all().order_by(sort_param)
+    next_sort = 'id' if sort_param == '-id' else '-id'
+    context = {'records':records,
+               'next_sort': next_sort,
+               'current_sort': sort_param,
+               }
     return render(request, 'web/dashboard.html', context)
 
 #Create
@@ -29,13 +36,13 @@ def create_record(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Post Created Successfully!")
-            return redirect('webapp:dashboard')
+            return redirect('webapp:dashboard')   #urls name
     else:
         form = CreateRecordForm()
         
     context = {'form':form}
     
-    return render(request, 'web/create-record.html', context=context) 
+    return render(request, 'web/create-record.html', context=context)  #templates location
 
 
 
@@ -89,5 +96,25 @@ def delete_record(request, slug):
     context = {'record':record}
     
     return render(request, 'web/delete-record.html', context)
+
+
+logger = logging.getLogger(__name__)
+@login_required(login_url='users:login')
+def search(request):
+    query = request.GET.get('query', '').strip()
+    results = []
+    try:
+        if query:
+            results = Record.objects.filter(Q(first_name__icontains=query)|Q(last_name__icontains=query)|Q(phone__istartswith=query))
+            
+    except Exception as e:
+        logger.error('Error during search: %s', e)
+        
+    context = {'results':results,
+                   'query':query}
+        
+    return render(request, 'web/search.html', context=context)
+        
+    
     
     

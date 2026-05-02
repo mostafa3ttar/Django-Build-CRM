@@ -1,22 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if user.is_authenticated %}
-<h1 class="p-3">Welcome to the Dashboard page, <b>{{user.username}}! 👋</b></h1>
-<hr style="border: 1px solid black; margin: 20px 180px;">
-{% else %}
-<h1>Welcome guest!</h1>
-{% endif %}
-
-<a class="btn btn-outline-primary mb-3" style="margin-left: 45%; margin-right: auto;"
-    href="{% url 'webapp:create-record' %}">Create Record</a>
-
-<div class="d-flex justify-content-end mb-3">
-    <form method="GET" action="{% url 'webapp:search' %}" class="d-flex" role="search" style="max-width: 300px;">
-        <input class="form-control me-2" type="search" name="query" placeholder="Search">
-        <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
-    </form>
-</div>
 
 <div class="container text-center my-4">
     <table class="table table-striped">
@@ -43,8 +27,8 @@
             </tr>
         </thead>
         <tbody>
-            {% if records %}
-            {% for record in records %}
+            {% if results %}
+            {% for record in results %}
             <tr>
                 <th class="bg-light" scope="row">
                     {% if current_sort == '-id' %}
@@ -69,7 +53,7 @@
             <tr>
                 <td class="text-center mt-3" colspan="110">
                     <div class="alert alert-warning" style="margin: 0 90px;" role="alert">
-                        <h4><b> You don't have any record yet!</b></h4>
+                        <h4><b>Not Found "{{ query }}"!</b></h4>
                     </div>
                 </td>
             </tr>

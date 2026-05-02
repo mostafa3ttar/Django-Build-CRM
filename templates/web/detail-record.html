@@ -7,7 +7,7 @@
     <h3>
         <p><strong>ID: </strong>{{record.id}}</p>
         <p><strong>Full Name: </strong>{{record.first_name }} {{record.last_name}}</p>
-        <p><strong>Phone: </strong>+20{{record.phone}}</p>
+        <p><strong>Phone: </strong>{{record.phone}}</p>
         <p><strong>Category: </strong>{{record.category}}</p>
         <p><strong>Tall: </strong>{{record.tall}}</p>
         <p><strong>Weight: </strong>{{record.weight}}</p>
@@ -16,7 +16,8 @@
     </h3>
 </div>
 
-<div class="container">
+<div class="container d-flex gap-2">
+    <a href="{% url 'webapp:dashboard' %}"><i class="bi bi-skip-start-fill fs-1" style="margin-left: -25px;"></i></a>
     <a class="btn btn-outline-success" style="margin-right: 5px;" href="{% url 'webapp:edit-record' record.slug %}">Edit
         Record</a>
     <a class="btn btn-outline-danger" style="margin-left: 5px;"

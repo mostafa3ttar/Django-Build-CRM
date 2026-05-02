@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 from django.utils.text import slugify
+from django.core.validators import RegexValidator
 
 
 # Create your models here.
@@ -15,10 +16,14 @@ class Category (models.Model):
         return self.name
     
 # client model
+phone_regex = RegexValidator(
+    regex=r'^\d{9,15}$', 
+    message="Phone number must be 9-15 digits and contain only numbers."
+)
 class Record(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    phone = models.IntegerField()
+    phone = models.CharField(validators=[phone_regex], max_length=15)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     tall = models.IntegerField()
     weight = models.IntegerField()

@@ -12,6 +12,7 @@ urlpatterns = [
     path('detail/<slug:slug>/', views.detail_record, name='detail-record'),
     path('edit/<slug:slug>/', views.edit_record, name='edit-record'),
     path('delete/<slug:slug>/', views.delete_record, name='delete-record'),
+    path('search/', views.search, name='search'),
     ]
 
 
