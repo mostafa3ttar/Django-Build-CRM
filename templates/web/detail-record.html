@@ -22,11 +22,11 @@
 <div class="container d-flex gap-2">
     <a href="{% url 'webapp:dashboard' %}"><i class="bi bi-skip-start-fill fs-1" style="margin-left: -60px;"></i></a>
     <a class="btn btn-outline-success" style="margin-right: 5px;" href="{% url 'webapp:edit-record' record.slug %}">Edit
-        Record</a>
+        Record <i class="fa-solid fa-wrench"></i></a>
     <button class="btn btn-sm btn-outline-danger delete-btn" data-slug="{{ record.slug }}"
         style="padding-left: 35px; padding-right: 35px;" data-name="{{ record.first_name }} {{ record.last_name }}"
         data-bs-toggle="modal" data-bs-target="#deleteModal">
-        Delete
+        Delete <i class="fa-solid fa-trash"></i>
     </button>
 </div>
 

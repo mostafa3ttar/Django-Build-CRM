@@ -118,4 +118,5 @@ def search(request):
         
     
     
-    
+def custom_page_not_found(requset, exception):
+    return render(requset, 'web/404.html', status=404)

@@ -9,7 +9,7 @@
 {% endif %}
 
 <a class="btn btn-outline-primary mb-3" style="margin-left: 45%; margin-right: auto;"
-    href="{% url 'webapp:create-record' %}">Create Record</a>
+    href="{% url 'webapp:create-record' %}">Create Record <i class="fa fa-plus" aria-hidden="true"></i></a>
 
 {% include "parts/_messages.html" %}
 <div class="d-flex justify-content-end mb-3">
@@ -62,11 +62,11 @@
                 <td>{{record.address}}</td>
                 <td>{{record.created_at}}</td>
                 <td><a href="{% url 'webapp:detail-record' record.slug %}" class="btn btn-outline-primary btn-sm"
-                        style="padding-left: 25px; padding-right: 25px;">Veiw</a>
+                        style="padding-left: 25px; padding-right: 25px;">View</a>
                     <button class="btn btn-sm btn-outline-danger delete-btn" data-slug="{{ record.slug }}"
                         data-name="{{ record.first_name }} {{ record.last_name }}" data-bs-toggle="modal"
                         data-bs-target="#deleteModal">
-                        Delete
+                        Delete <i class="fa-solid fa-trash"></i>
                     </button>
                 </td>
             </tr>

@@ -1,0 +1,150 @@
+body {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Start Dark Mode */
+
+/* --- Optimized Dark Mode Mostafa CRM --- */
+
+/* Nav */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode strong,
+body.dark-mode .navbar-brand {
+    color: #3b82f6 !important;
+}
+
+/* Table&Cards */
+body.dark-mode .card,
+body.dark-mode .table,
+body.dark-mode .card-body,
+body.dark-mode .modal-body,
+body.dark-mode p,
+body.dark-mode .bi-skip-start-fill,
+body.dark-mode .container .card {
+    /* background-color: #1e1e1e !important; */
+    /* border: 1px solid #333 !important; */
+    color: #e5e7eb !important;
+}
+
+/* Tables */
+body.dark-mode .table td,
+body.dark-mode .table th {
+    background-color: #1e1e1e !important;
+    color: #f8f9fa !important;
+    border-color: #444 !important;
+}
+
+/* Lable */
+body.dark-mode label,
+body.dark-mode .form-label,
+body.dark-mode .control-label {
+    color: #3b82f6 !important;
+    font-weight: 600 !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Input */
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode input[name="search"] {
+    background-color: #262626 !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+}
+
+/* Buttons&Search  */
+body.dark-mode #search-button {
+    background-color: #3b82f6 !important;
+    border: none !important;
+    color: #fff !important;
+}
+
+body.dark-mode .search-container .btn,
+body.dark-mode button[type="submit"] {
+    background-color: #333 !important;
+    color: #fff !important;
+    border: 1px solid #555 !important;
+    box-shadow: none !important;
+}
+
+/* Delete&View */
+body.dark-mode .btn-primary,
+body.dark-mode .btn-danger,
+body.dark-mode .btn-info {
+    opacity: 0.9;
+}
+
+body.dark-mode h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+}
+
+/* End Dark Mode */
+
+.modal-content {
+    background-color: #ffffff;
+}
+
+.rounded-pill {
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.btn-light:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.bi-exclamation-octagon {
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* تنسيق تباعد الأسطر لراحة العين */
+.leading-relaxed {
+    line-height: 1.6;
+}
+
+/* تنعيم حركة ظهور المودال */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+/* جعل اسم الشخص بارز لكن بشكل متناسق */
+#recordName {
+    display: inline-block;
+    border-bottom: 2px solid #f8d7da;
+    /* خط خفيف تحت الاسم لتمييزه */
+    padding-bottom: 2px;
+}

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
     <a class="navbar-brand main-heading" href="{% url 'webapp:home' %}">
 
-        &nbsp; Django - CRM
+        &nbsp; Mostafa - CRM
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,21 +12,28 @@
             &nbsp; &nbsp; &nbsp;
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'webapp:dashboard' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'webapp:dashboard' %}">Dashboard &nbsp; <i
+                        class="fa-solid fa-house-chimney" aria-hidden="true"></i> </a>
             </li>
             &nbsp; &nbsp; &nbsp;
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:logout' %}">LogOut &nbsp; <i class="bi bi-door-open-fill" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'users:logout' %}">Logout &nbsp; <i class="bi bi-door-open-fill"
+                        aria-hidden="true"></i> </a>
             </li>
             {% else %}
-                        <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:register' %}">SignUp &nbsp; <i class="bi-person-plus-fill" aria-hidden="true"></i> </a>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:register' %}">Signup &nbsp; <i class="bi-person-plus-fill"
+                        aria-hidden="true"></i> </a>
             </li>
             &nbsp; &nbsp; &nbsp;
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:login' %}">LogIn &nbsp; <i class="bi bi-door-closed-fill" aria-hidden="true"></i> </a>
+                <a class="nav-link" href="{% url 'users:login' %}">Login &nbsp; <i class="bi bi-door-closed-fill"
+                        aria-hidden="true"></i> </a>
             </li>
             {% endif %}
+            <button onclick="toggleDarkMode()" class="btn btn-sm btn-outline-secondary ms-4" id="dark-mode-toggle">
+                🌙 Mode
+            </button>
             &nbsp; &nbsp; &nbsp;
         </ul>
         &nbsp; &nbsp; &nbsp;
