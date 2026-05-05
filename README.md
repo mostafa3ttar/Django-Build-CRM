@@ -1,28 +1,38 @@
-# CRM System
+# 🚀 Mostafa CRM System
+**A Modern, High-Performance CRM Built with Django**
 
-A robust Customer Relationship Management (CRM) system built with Django. Designed to streamline sales operations, manage leads, and track deals with an API-first approach.
+Mostafa CRM is a robust Customer Relationship Management system designed to streamline sales operations and manage customer data with a focus on **User Experience** and **API-first architecture**.
 
-## 🚀 Key Features
-- **Lead Management:** Efficiently capture and track potential customers.
-- **Deal Tracking:** Manage sales pipelines from initial contact to closure.
-- **RESTful API:** Built with Django REST Framework for seamless integration.
-- **Role-Based Access:** Dedicated control levels for Sales Agents and Administrators.
+## 🎨 New: Modern UI & Experience
+I've recently overhauled the interface to provide a professional feel:
+- **Dynamic Dark Mode:** A sleek, eye-straining-free interface with a persistent state using LocalStorage.
+- **Premium Typography:** Integrated the **Inter** font for maximum readability and a modern tech aesthetic.
+- **Morph UI Integration:** Leveraging Bootstrap 5 with a custom-tuned Neumorphism style.[cite: 1, 2]
 
 ## 📸 Preview
-*(Insert a screenshot of your dashboard here)*
+*(Screenshots coming soon - Link will be added here)*
+> **Note:** The UI features a custom-built toggle to switch between Light and Dark themes seamlessly.
+
+## ✨ Key Features
+- **Lead & Record Management:** Full CRUD operations for managing potential customers with a clean, organized dashboard.[cite: 1]
+- **Advanced Search:** Integrated search functionality to filter records instantly.[cite: 1]
+- **RESTful API:** Powered by **Django REST Framework** for seamless third-party integrations.
+- **Role-Based Access:** Granular control for Sales Agents and Administrators.
+- **Responsive Design:** Fully optimized for all screen sizes, from mobile to desktop.
 
 ## 🛠️ Tech Stack
-- **Backend:** Django, Django REST Framework
-- **Database:** SQLite
-- **Environment:** python-dotenv
+- **Backend:** Django 4.x, Django REST Framework
+- **Frontend:** Bootstrap 5 (Morph Theme), JavaScript (Custom Theme Engine)[cite: 1, 2]
+- **Database:** SQLite (Development)
+- **Styling:** Custom CSS with Variable-based Theming[cite: 1]
 
 ## 📋 Documentation
-For detailed setup instructions and API documentation, please refer to the following files:
+For detailed setup instructions and API documentation, please refer to:
 - [Installation Guide](docs/SETUP.md)
 - [API Documentation](docs/API.md)
 
-## 📝 About
-This project was developed as part of my backend engineering portfolio, focusing on scalable architecture and clean code practices.
+## 📝 Project Vision
+This project is a cornerstone of my **Backend Engineering Portfolio**. It demonstrates my ability to build scalable architectures while maintaining a deep focus on **Clean Code** and **Professional UI/UX** standards.[cite: 1, 2]
 
 ---
-*Developed by Mostafa*
+*Developed with ❤️ by **Mostafa** - Backend Developer & UI Enthusiast*
