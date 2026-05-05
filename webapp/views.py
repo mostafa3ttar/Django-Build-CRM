@@ -35,7 +35,7 @@ def create_record(request):
         form = CreateRecordForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Post Created Successfully!")
+            messages.success(request, "Record Created Successfully!")
             return redirect('webapp:dashboard')   #urls name
     else:
         form = CreateRecordForm()
@@ -76,6 +76,7 @@ def edit_record(request, slug):
             myform = form.save(commit=False)
             myform.record = record
             myform.save()
+            messages.success(request, 'Record is Updated.')
             return redirect('webapp:detail-record', slug=record.slug)    
     else:
         form = CreateRecordForm(instance=record)

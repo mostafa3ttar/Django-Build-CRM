@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .form import CustomUserCreationForm, LoginForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Registration is successfully')
             return redirect('users:login')
     else:
         form = CustomUserCreationForm()
@@ -35,6 +37,7 @@ def my_login(request):
             
             if user is not None:
                 login(request, user)
+                # messages.success(request, 'Login is successfully')
                 return redirect('webapp:dashboard')
     
     else:
@@ -46,4 +49,5 @@ def my_login(request):
 
 def my_logout(request):
     logout(request)
+    # messages.success(request, 'Logout is Done!')
     return redirect('users:login')

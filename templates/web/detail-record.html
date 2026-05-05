@@ -3,6 +3,9 @@
 
 {% block content %}
 
+{% include "parts/_messages.html" %}
+
+
 <div class="cart" style="padding-left: 100px; padding-top: 100px;">
     <h3>
         <p><strong>ID: </strong>{{record.id}}</p>
@@ -17,11 +20,15 @@
 </div>
 
 <div class="container d-flex gap-2">
-    <a href="{% url 'webapp:dashboard' %}"><i class="bi bi-skip-start-fill fs-1" style="margin-left: -25px;"></i></a>
+    <a href="{% url 'webapp:dashboard' %}"><i class="bi bi-skip-start-fill fs-1" style="margin-left: -60px;"></i></a>
     <a class="btn btn-outline-success" style="margin-right: 5px;" href="{% url 'webapp:edit-record' record.slug %}">Edit
         Record</a>
-    <a class="btn btn-outline-danger" style="margin-left: 5px;"
-        href="{% url 'webapp:delete-record' record.slug %}">Delete</a>
+    <button class="btn btn-sm btn-outline-danger delete-btn" data-slug="{{ record.slug }}"
+        style="padding-left: 35px; padding-right: 35px;" data-name="{{ record.first_name }} {{ record.last_name }}"
+        data-bs-toggle="modal" data-bs-target="#deleteModal">
+        Delete
+    </button>
 </div>
+
 
 {% endblock content %}

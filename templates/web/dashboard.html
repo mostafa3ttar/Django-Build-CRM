@@ -11,6 +11,7 @@
 <a class="btn btn-outline-primary mb-3" style="margin-left: 45%; margin-right: auto;"
     href="{% url 'webapp:create-record' %}">Create Record</a>
 
+{% include "parts/_messages.html" %}
 <div class="d-flex justify-content-end mb-3">
     <form method="GET" action="{% url 'webapp:search' %}" class="d-flex" role="search" style="max-width: 300px;">
         <input class="form-control me-2" type="search" name="query" placeholder="Search">
@@ -60,8 +61,13 @@
                 <td>{{record.weight}}</td>
                 <td>{{record.address}}</td>
                 <td>{{record.created_at}}</td>
-                <td><a href="{% url 'webapp:detail-record' record.slug %}"
-                        class="btn btn-outline-primary btn-sm">Veiw</a>
+                <td><a href="{% url 'webapp:detail-record' record.slug %}" class="btn btn-outline-primary btn-sm"
+                        style="padding-left: 25px; padding-right: 25px;">Veiw</a>
+                    <button class="btn btn-sm btn-outline-danger delete-btn" data-slug="{{ record.slug }}"
+                        data-name="{{ record.first_name }} {{ record.last_name }}" data-bs-toggle="modal"
+                        data-bs-target="#deleteModal">
+                        Delete
+                    </button>
                 </td>
             </tr>
             {% endfor %}

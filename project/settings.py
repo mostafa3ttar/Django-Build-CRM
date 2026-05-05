@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+from django.contrib.messages import constants as messages
 
 load_dotenv()
 
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'crispy_bootstrap4',
-    'crispy_bootstrap5',
+    # 'crispy_bootstrap5',
     
     # my apps
     'users',
@@ -127,6 +128,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = 'login'
+
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}
