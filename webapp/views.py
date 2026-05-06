@@ -19,7 +19,7 @@ def home(request):
 @login_required(login_url='users:login')
 def dashboard(request):
     sort_param = request.GET.get('sort', '-id')
-    records = Record.objects.all().order_by(sort_param)
+    records = Record.objects.filter(user=request.user).order_by(sort_param)
     next_sort = 'id' if sort_param == '-id' else '-id'
     context = {'records':records,
                'next_sort': next_sort,
@@ -34,6 +34,8 @@ def create_record(request):
     if request.method == 'POST':
         form = CreateRecordForm(request.POST)
         if form.is_valid():
+            record = form.save(commit=False)
+            record.user = request.user
             form.save()
             messages.success(request, "Record Created Successfully!")
             return redirect('webapp:dashboard')   #urls name

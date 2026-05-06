@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+from django.contrib.auth.models import User
 import uuid
 from django.utils.text import slugify
 from django.core.validators import RegexValidator
@@ -21,6 +23,10 @@ phone_regex = RegexValidator(
     message="Phone number must be 9-15 digits and contain only numbers."
 )
 class Record(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE
+    )
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(validators=[phone_regex], max_length=15)
