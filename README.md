@@ -3,6 +3,11 @@
 
 Mostafa CRM is a robust Customer Relationship Management system designed to streamline sales operations and manage customer data with a focus on **User Experience** and **API-first architecture**.
 
+## Live Demo
+You can explore the live version of the project here: 
+[Mostafa CRM on PythonAnywhere](https://MostafaAli.pythonanywhere.com)
+
+
 ## 🎨 New: Modern UI & Experience
 I've recently overhauled the interface to provide a professional feel:
 - **Dynamic Dark Mode:** A sleek, eye-straining-free interface with a persistent state using LocalStorage.
