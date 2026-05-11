@@ -12,7 +12,7 @@
     href="{% url 'webapp:create-record' %}">Create Record <i class="fa fa-plus" aria-hidden="true"></i></a>
 
 {% include "parts/_messages.html" %}
-<div class="d-flex justify-content-end mb-3">
+<div class="row justify-content-end mb-3">
     <form method="GET" action="{% url 'webapp:search' %}" class="d-flex" role="search" style="max-width: 300px;">
         <input class="form-control me-2" type="search" name="query" placeholder="Search">
         <button class="btn btn-success" type="submit"><i class="bi bi-search"></i></button>
